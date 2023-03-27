@@ -1,0 +1,119 @@
+.notePage {
+    &__back {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #eff5ff;
+        border-radius: 20px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+.note {
+    padding: 10px 20px 15px 20px;
+    background-color: #eff5ff;
+    border-radius: 20px;
+
+    .containerN,
+    .backdrop,
+    textarea {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .highlights,
+    textarea {
+        padding: 10px;
+        color: #343b4c;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 1px;
+    }
+
+    .containerN {
+        display: block;
+        margin: 0 auto;
+        transform: translateZ(0);
+        -webkit-text-size-adjust: none;
+    }
+
+    .backdrop {
+        position: absolute;
+        z-index: 1;
+        background-color: #eff5ff;
+        overflow: auto;
+        pointer-events: none;
+        transition: transform 1s;
+    }
+
+    .highlights {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        color: transparent;
+    }
+
+    textarea {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        margin: 0;
+        border-radius: 0;
+        color: #444;
+        background-color: transparent;
+        overflow: auto;
+        resize: none;
+        transition: transform 1s;
+    }
+
+    mark {
+        border-radius: 3px;
+        color: transparent;
+        background-color: #ffe100;
+    }
+
+    &__btn {
+        margin-top: 30px;
+        height: 40px;
+        padding: 10px;
+        width: 100%;
+        background-color: white;
+        border-radius: 20px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    &__date {
+        width: 100%;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__text {
+        cursor: pointer;
+        margin-bottom: 20px;
+        min-height: 50vh;
+        color: #343b4c;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        white-space: pre-wrap;
+    }
+
+    &__tegsList {
+        margin-top: 10px;
+    }
+
+    &__teg {
+        color: #ffe100;
+        font-weight: 900;
+    }
+}

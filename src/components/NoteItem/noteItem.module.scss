@@ -1,0 +1,56 @@
+.note {
+    cursor: pointer;
+    padding: 10px 20px 15px 20px;
+    background-color: #eff5ff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+
+    &__title {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__date {
+        display: flex;
+        align-items: center;
+    }
+
+    &__remove {
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        background: url('./../../img/remove.svg') no-repeat;
+        background-size: contain;
+
+        img {
+            visibility: hidden;
+        }
+
+        &:hover {
+            background: none;
+
+            img {
+                width: 25px;
+                height: 25px;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__text {
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__tegsList {
+        margin-top: 10px;
+    }
+    
+    &__teg{
+        color: #ffe100;
+        font-weight:900; 
+    }
+}
