@@ -18,7 +18,7 @@ const createNote = (text: string) => async (dispatch: AppDispatch) => {
         return day + '.' + month + '.' + year.slice(2) + ' ' + hours + ":" + min;
 
     }
-    const createTegs = (text: string): string[] => {
+    const createTags = (text: string): string[] => {
        return text.split(/\s/).filter(el => el[0] === '#');
     }
 
@@ -26,7 +26,7 @@ const createNote = (text: string) => async (dispatch: AppDispatch) => {
         id: Date.now(),
         date: createDate(),
         text: text,
-        teg: createTegs(text),
+        tag: createTags(text),
     };
     try {
         dispatch(noteListSlice.actions.notesFetching());

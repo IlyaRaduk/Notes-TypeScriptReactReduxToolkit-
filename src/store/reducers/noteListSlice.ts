@@ -7,8 +7,8 @@ interface InoteListState {
     error: string,
     noteInput: string,
     modalActive: boolean,
-    tegsInput: string,
-    tegs: string[],
+    tagsInput: string,
+    tags: string[],
 }
 
 const initialState: InoteListState = {
@@ -17,8 +17,8 @@ const initialState: InoteListState = {
     error: "",
     noteInput: '',
     modalActive: false,
-    tegsInput: '',
-    tegs: [],
+    tagsInput: '',
+    tags: [],
 }
 
 export const noteListSlice = createSlice({
@@ -40,8 +40,8 @@ export const noteListSlice = createSlice({
         noteInput(state, action: PayloadAction<string>) {
             state.noteInput = action.payload;
         },
-        tegsInput(state, action: PayloadAction<string>) {
-            state.tegsInput = action.payload;
+        tagsInput(state, action: PayloadAction<string>) {
+            state.tagsInput = action.payload;
         },
         addNote(state, action: PayloadAction<INote>) {
             state.notes.unshift(action.payload);
@@ -56,12 +56,12 @@ export const noteListSlice = createSlice({
         setActivModal(state, action: PayloadAction<boolean>) {
             state.modalActive = action.payload;
         },
-        addTeg(state, action: PayloadAction<string>) {
-            state.tegs.push('#' + action.payload);
-            state.tegsInput = '';
+        addTag(state, action: PayloadAction<string>) {
+            state.tags.push('#' + action.payload);
+            state.tagsInput = '';
         },
-        removeTeg(state, action: PayloadAction<number>) {
-            state.tegs.splice(action.payload, 1);
+        removeTag(state, action: PayloadAction<number>) {
+            state.tags.splice(action.payload, 1);
         },
     }
 })

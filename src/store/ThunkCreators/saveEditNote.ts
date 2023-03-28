@@ -8,21 +8,21 @@ const saveEditNote = (currentText: string, editText: string, note:INote) => asyn
         dispatch(noteSlice.actions.editSwitchOff(currentText));
     }
     else {
-        const createTegs = (text: string): string[] => {
+        const createTags = (text: string): string[] => {
             return text.split(/\s/).filter(el => el[0] === '#');
         }
         const newNote: INote = {
             id: note.id,
             date: note.date,
             text: editText,
-            teg: createTegs(editText),
+            tag: createTags(editText),
         };
         try {
             dispatch(noteSlice.actions.notesFetching());
             let response = await axios.put<INote>(`http://localhost:8000/notes/${note.id}`, newNote);
             if (response.status) {
                 dispatch(noteSlice.actions.editSwitchOff(editText));
-                dispatch(noteSlice.actions.addTegs(createTegs(editText)));
+                dispatch(noteSlice.actions.addTags(createTags(editText)));
             }
         } catch (e) {
             dispatch(noteSlice.actions.notesFetchingError('Ошибка'));

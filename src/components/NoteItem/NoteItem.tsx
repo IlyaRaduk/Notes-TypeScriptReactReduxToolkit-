@@ -24,9 +24,9 @@ const NoteItem: FC<INoteProps> = ({ note }) => {
                 </div>
             </div>
             <p className={style.note__text}>{note.text}</p>
-            {note.teg?.length !== 0 && note.teg?.length !== undefined ?
-                <div  className={style.note__tegsList}>
-                    Tegs: {note.teg?.map((el,index) => <span key={index} className={style.note__teg}>{el + ' '}</span>)}
+            {note.tag?.length !== 0 && note.tag?.length !== undefined ?
+                <div  className={style.note__tagsList}>
+                    Tags: {note.tag?.map((el,index) => <span key={index} className={style.note__tag}>{el + ' '}</span>)}
                 </div>
                 : null
             }

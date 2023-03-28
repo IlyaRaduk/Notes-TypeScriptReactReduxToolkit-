@@ -3,28 +3,28 @@ import { FC } from "react";
 import { useAppDisaptch } from '../../hooks/redux';
 import { noteListSlice } from '../../store/reducers/noteListSlice';
 
-interface ISearchTegsProps {
-    tegs: string[],
-    tegsInput: string,
+interface ISearchTagsProps {
+    tags: string[],
+    tagsInput: string,
 }
 
-const SearchTags: FC<ISearchTegsProps> = ({ tegs, tegsInput }) => {
+const SearchTags: FC<ISearchTagsProps> = ({ tags, tagsInput }) => {
     const dispatch = useAppDisaptch();
     return (
         <div className={style.search}>
-            <label htmlFor="addTegs">Your tags for search</label>
+            <label htmlFor="addTags">Your tags for search</label>
             <div className={style.search__inputField}>
                 <input
                     className={style.search__input}
                     placeholder='Add new tag'
-                    name="addTegs"
+                    name="addTags"
                     type="text"
-                    value={tegsInput}
-                    onChange={(e) => dispatch(noteListSlice.actions.tegsInput(e.target.value))} />
-                <button className={style.search__btn} onClick={() => dispatch(noteListSlice.actions.addTeg(tegsInput))}>Add</button>
+                    value={tagsInput}
+                    onChange={(e) => dispatch(noteListSlice.actions.tagsInput(e.target.value))} />
+                <button className={style.search__btn} onClick={() => dispatch(noteListSlice.actions.addTag(tagsInput))}>Add</button>
             </div>
-            <div className={style.search__tegs}>
-                {tegs.length !== 0 ? tegs.map((teg, index) => <span onClick={()=>dispatch(noteListSlice.actions.removeTeg(index))} key={index} className={style.search__teg}>{ teg + ' '}</span>) : null}
+            <div className={style.search__tags}>
+                {tags.length !== 0 ? tags.map((tag, index) => <span onClick={()=>dispatch(noteListSlice.actions.removeTag(index))} key={index} className={style.search__tag}>{ tag + ' '}</span>) : null}
             </div>
         </div>
     )

@@ -51,8 +51,8 @@ export const noteSlice = createSlice({
         editText(state, action: PayloadAction<string>) {
             state.textEdit = action.payload;
         },
-        addTegs(state, action: PayloadAction<string[]>) {
-             state.note.teg=[...action.payload];
+        addTags(state, action: PayloadAction<string[]>) {
+             state.note.tag=[...action.payload];
         },
     }
 })
