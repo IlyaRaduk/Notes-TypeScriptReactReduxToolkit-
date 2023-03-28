@@ -32,7 +32,7 @@ const NoteListPage: FC = () => {
         <div>
             <ModalAddNote active={modalActive} setActive={handleSwitchModal} />
             <button onClick={() => handleSwitchModal(true)} className={style.btn}>Create note</button>
-            {isLoading && <h1>Loading</h1>}
+            {isLoading && <h1>Loading...</h1>}
             {error && <h1>Error</h1>}
             <SearchTags tags={tags} tagsInput={tagsInput} />
             <div className={style.noteList}>
