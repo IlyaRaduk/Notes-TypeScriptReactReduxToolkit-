@@ -1,4 +1,4 @@
-import style from './searchTegs.module.scss';
+import style from './searchTags.module.scss';
 import { FC } from "react";
 import { useAppDisaptch } from '../../hooks/redux';
 import { noteListSlice } from '../../store/reducers/noteListSlice';
@@ -8,15 +8,15 @@ interface ISearchTegsProps {
     tegsInput: string,
 }
 
-const SearchTegs: FC<ISearchTegsProps> = ({ tegs, tegsInput }) => {
+const SearchTags: FC<ISearchTegsProps> = ({ tegs, tegsInput }) => {
     const dispatch = useAppDisaptch();
     return (
         <div className={style.search}>
-            <label htmlFor="addTegs">Your tegs for search</label>
+            <label htmlFor="addTegs">Your tags for search</label>
             <div className={style.search__inputField}>
                 <input
                     className={style.search__input}
-                    placeholder='Add new teg'
+                    placeholder='Add new tag'
                     name="addTegs"
                     type="text"
                     value={tegsInput}
@@ -29,4 +29,4 @@ const SearchTegs: FC<ISearchTegsProps> = ({ tegs, tegsInput }) => {
         </div>
     )
 }
-export default SearchTegs;
+export default SearchTags;

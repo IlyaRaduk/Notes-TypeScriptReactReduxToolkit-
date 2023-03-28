@@ -6,7 +6,7 @@ import fetchNotes from "../../store/ThunkCreators/fetchNotes";
 import NoteItem from "../NoteItem/NoteItem";
 import ModalAddNote from '../InputAddNote/ModalAddNote';
 import { noteListSlice } from '../../store/reducers/noteListSlice';
-import SearchTegs from '../SearchTegs/SearchTegs';
+import SearchTags from '../SearchTags/SearchTags';
 
 const NoteListPage: FC = () => {
     const { notes, isLoading, error, modalActive, tegsInput, tegs } = useAppSelector((state => state.noteListSlice));
@@ -32,9 +32,9 @@ const NoteListPage: FC = () => {
         <div>
             <ModalAddNote active={modalActive} setActive={handleSwitchModal} />
             <button onClick={() => handleSwitchModal(true)} className={style.btn}>Create note</button>
-            {isLoading && <h1>Идёт загрузка</h1>}
-            {error && <h1>Ошибка</h1>}
-            <SearchTegs tegs={tegs} tegsInput={tegsInput} />
+            {isLoading && <h1>Loading</h1>}
+            {error && <h1>Error</h1>}
+            <SearchTags tegs={tegs} tegsInput={tegsInput} />
             <div className={style.noteList}>
                 <p className={style.noteList__title}>Your notes</p>
                 {tegs.length === 0 ?

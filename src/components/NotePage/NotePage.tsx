@@ -37,9 +37,9 @@ const NotePage: FC = () => {
 
     return (
         <div className={style.notePage}>
-            <div className={style.notePage__back} onClick={() => navigate(`/}`)}>К заметкам</div>
-            {isLoading && <h1>Идёт загрузка</h1>}
-            {error && <h1>Ошибка</h1>}
+            <div className={style.notePage__back} onClick={() => navigate(`/}`)}>Go back</div>
+            {isLoading && <h1>Loading</h1>}
+            {error && <h1>Erorr</h1>}
             {isActiveEdit ?
                 <div className={style.note}>
                     <div className={style.containerN}>
@@ -60,7 +60,7 @@ const NotePage: FC = () => {
                     <pre className={style.note__text}>{note.text}</pre>
                     {note.teg?.length !== 0 && note.teg?.length !== undefined ?
                         <div className={style.note__tegsList}>
-                            Tegs: {note.teg?.map((el,index) => <span key={index} className={style.note__teg}>{el + ' '}</span>)}
+                            Tags: {note.teg?.map((el,index) => <span key={index} className={style.note__teg}>{el + ' '}</span>)}
                         </div>
                         : null
                     }
