@@ -6,7 +6,7 @@ import { AppDispatch } from "../store";
 const fetchOneNote = (id: number) => async (dispatch: AppDispatch) => {
     try {
         dispatch(noteSlice.actions.notesFetching());
-        const response = await axios.get<INote[]>('https://rest-json-server.vercel.app/notes');
+        const response = await axios.get<INote[]>('http://localhost:8000/notes');
         const note = response.data.find((el) => el.id == id);
         if (!note){
            throw 'Ошибка';

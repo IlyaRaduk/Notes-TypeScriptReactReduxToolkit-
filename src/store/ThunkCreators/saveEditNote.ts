@@ -19,7 +19,7 @@ const saveEditNote = (currentText: string, editText: string, note:INote) => asyn
         };
         try {
             dispatch(noteSlice.actions.notesFetching());
-            let response = await axios.put<INote>(`https://rest-json-server.vercel.app/notes/${note.id}`, newNote);
+            let response = await axios.put<INote>(`http://localhost:8000/notes/${note.id}`, newNote);
             if (response.status) {
                 dispatch(noteSlice.actions.editSwitchOff(editText));
                 dispatch(noteSlice.actions.addTegs(createTegs(editText)));

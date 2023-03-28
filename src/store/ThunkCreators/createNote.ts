@@ -30,7 +30,7 @@ const createNote = (text: string) => async (dispatch: AppDispatch) => {
     };
     try {
         dispatch(noteListSlice.actions.notesFetching());
-        let response = await axios.post<INote>('https://rest-json-server.vercel.app/notes', newNote);
+        let response = await axios.post<INote>('http://localhost:8000/notes', newNote);
         if (response.status) {
             dispatch(noteListSlice.actions.addNote(response.data));
         }

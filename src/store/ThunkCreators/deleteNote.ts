@@ -6,7 +6,7 @@ import { AppDispatch } from "../store";
 const deleteNote = (id: number) => async (dispatch: AppDispatch) => {
     try {
         dispatch(noteListSlice.actions.notesFetching());
-        let response = await axios.delete<INote>(`https://rest-json-server.vercel.app/notes/${id}`);
+        let response = await axios.delete<INote>(`http://localhost:8000/notes/${id}`);
         if(response.status){
             dispatch(noteListSlice.actions.deleteNote(id)); 
         }

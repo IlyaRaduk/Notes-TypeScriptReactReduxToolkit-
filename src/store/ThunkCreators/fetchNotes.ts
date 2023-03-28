@@ -6,7 +6,7 @@ import { AppDispatch } from "../store";
 const fetchNotes = () => async (dispatch: AppDispatch) => {
     try {
         dispatch(noteListSlice.actions.notesFetching());
-        const response = await axios.get<INote[]>('https://rest-json-server.vercel.app/notes');
+        const response = await axios.get<INote[]>('http://localhost:8000/notes');
         dispatch(noteListSlice.actions.notesFetchingSuccess(response.data.reverse()));
 
     } catch (e) {
