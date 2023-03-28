@@ -38,7 +38,7 @@ const NotePage: FC = () => {
     return (
         <div className={style.notePage}>
             <div className={style.notePage__back} onClick={() => navigate(`/}`)}>Go back</div>
-            {isLoading && <h1>Loading</h1>}
+            {isLoading && <h1>Loading...</h1>}
             {error && <h1>Erorr</h1>}
             {isActiveEdit ?
                 <div className={style.note}>
